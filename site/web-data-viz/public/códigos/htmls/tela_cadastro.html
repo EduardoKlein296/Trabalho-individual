@@ -13,7 +13,7 @@
 
 </head>
 
-<body onload="listar()">
+<body>
     <div class="header">
         <div class="container">
             <h1 class="titulo">Coleções do Edu</h1>
@@ -98,7 +98,7 @@
       mensagem_erro.innerHTML =
         "(Mensagem de erro para todos os campos em branco)";
 
-      finalizarAguardar();
+      ;
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
@@ -116,7 +116,7 @@
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
-        senhaServer: senhaVar,
+        senhaServer: senhaVar
       }),
     })
       .then(function (resposta) {
@@ -133,19 +133,18 @@
           }, "2000");
 
           limparFormulario();
-          finalizarAguardar();
+         
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
+        ;
       });
 
     return false;
   }
-
 
   function sumirMensagem() {
     cardErro.style.display = "none";
