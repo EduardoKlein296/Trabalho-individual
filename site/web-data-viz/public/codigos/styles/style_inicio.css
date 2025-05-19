@@ -42,6 +42,11 @@ body{
     color: white;
 }
 
+a{
+text-decoration: none;
+color: black;
+}
+
 .banner {
     background-color:gray;
     border-radius: 8px;
@@ -49,6 +54,9 @@ body{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 350px;
     height: 200px;
+}
+.banner:hover{
+    transition: all;
 }
 
 .banner .skylanders{
@@ -78,7 +86,7 @@ body{
 }
 
 .banner .funko{
-    background-image: url(../../../../imagens/Inicio/fundo_index.jpg);
+    background-image: url(../../../../imagens/Inicio/funko_icone.jpg);
     background-size: cover;
     background-position: center;
     width: 210px;
