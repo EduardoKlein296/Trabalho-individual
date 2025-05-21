@@ -10,7 +10,7 @@ body{
 }
 
 .header{
-    background-color: rgb(136, 12, 12);
+    background-color: rgb(31, 5, 75);
 }
 .header .container{
     justify-content:space-between;
@@ -27,6 +27,11 @@ body{
  list-style: none;
 }
 
+.header .navegacao a {
+    text-decoration: underline;
+    color: black;
+}
+
 .container{
     width: 80%;
     margin: auto;
@@ -35,7 +40,6 @@ body{
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
   background-size: cover;
 }
 

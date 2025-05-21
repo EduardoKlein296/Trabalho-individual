@@ -1,7 +1,7 @@
 var usuarioModel = require("../models/usuarioModel");
 var aquarioModel = require("../models/aquarioModel");
 
-/*function autenticar(req, res) {
+function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
 
@@ -48,7 +48,7 @@ var aquarioModel = require("../models/aquarioModel");
             );
     }
 
-}*/
+}
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
