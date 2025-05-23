@@ -1,9 +1,12 @@
 var usuarioModel = require("../models/usuarioModel");
-var aquarioModel = require("../models/aquarioModel");
+// var aquarioModel = require("../models/aquarioModel");
 
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+
+    console.log("Teste emails controller" + email)
+    console.log("Teste senhas controller" + senha)
 
     if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
@@ -20,7 +23,7 @@ function autenticar(req, res) {
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
 
-                        aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].empresaId)
+                        usuarioModel.autenticar(resultadoAutenticar[0].id)
                             .then((resultadoAquarios) => {
                                 if (resultadoAquarios.length > 0) {
                                     res.json({

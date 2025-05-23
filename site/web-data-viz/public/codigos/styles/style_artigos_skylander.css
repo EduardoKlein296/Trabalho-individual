@@ -54,4 +54,26 @@ body{
 
 .artigo{
     color: black;
+    margin: 20px;
+}
+
+.artigo .portal{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.artigo .gameplay_exemplo{
+    padding: 20px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 500px;
+    text-align: center;
+}
+
+.artigo .gameplay_exemplo video{
+    margin:20px
 }
