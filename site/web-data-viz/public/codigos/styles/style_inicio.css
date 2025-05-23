@@ -39,7 +39,7 @@ body{
 
 .info{
     height: 450px;
-    background-image: url(../../../imagens/Inicio/fundo_index.jpg);
+    background-image: url(../../assets/imagens/Inicio/fundo_index.jpg);
     opacity: 0.7;
 }
 .info .texto{
@@ -64,7 +64,7 @@ color: black;
 }
 
 .banner .skylanders{
-    background-image: url(../../../imagens/Inicio/skylander_icon.png);
+    background-image: url(../../assets/imagens/Inicio/skylander_icon.png);
     width: 210px;
     height: 200px;
     display: flex;
@@ -72,7 +72,7 @@ color: black;
 }
 
 .banner .pokemon{
-    background-image: url(../../../imagens/Inicio/pokemon_icone.jpg);
+    background-image: url(../../assets/imagens/Inicio/pokemon_icone.jpg);
     width: 210px;
     height: 200px;
     display: flex;
@@ -80,7 +80,7 @@ color: black;
 }
 
 .banner .hqs{
-    background-image: url(../../../imagens/Inicio/hq_icone.jpg);
+    background-image: url(../../assets/imagens/Inicio/hq_icone.jpg);
     background-size: cover;
     background-position: center;
     width: 210px;
@@ -90,7 +90,7 @@ color: black;
 }
 
 .banner .funko{
-    background-image: url(../../../imagens/Inicio/funko_icone.jpg);
+    background-image: url(../../assets/imagens/Inicio/funko_icone.jpg);
     background-size: cover;
     background-position: center;
     width: 210px;
