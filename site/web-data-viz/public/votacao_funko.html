@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="codigos/styles/style_votacao.css">
 </head>
 <body>
-        <div class="header">
+    <div class="header">
         <div class="container">
             <h1 class="titulo">Coleções do Edu</h1>
             <ul class="navegacao">
@@ -15,7 +15,7 @@
                     <a href="index.html">Inicio</a>
                 </li>
                 <li>
-                    <a href="">Artigos</a>
+                    <a href="artigos.html">Artigos</a>
                 </li>
                 <li>
                     <a href="login.html">Login</a>
@@ -28,5 +28,40 @@
     </div>
     
     <div class="info"></div>
+
+    <div class="titulo">Votação: Qual o melhor Funko Pop</div>
+
+    <div class="artigo">
+        Esta página é uma votação de qual é o melhor Funko Pop entre os cinco selecionados da minha coleção
+    </div>
+<br>
+<div class="votacao">
+    <div> Batman que Ri (Vilão da primeira saga da minha coleção de hqs)<br>
+        <img src="assets/imagens/Votação_funko/batman_que_ri.jpg" height="250px">
+        <input type="checkbox" id="ipt_batman" value="1">
+    </div>
+<br>
+    <div> Mimikyu (Meu pokemon favorito)<br>
+        <img src="assets/imagens/Votação_funko/mymikyu.jpg" height="250px">
+        <input type="checkbox" id="ipt_mimikyu" value="2">
+    </div>
+<br>
+    <div> Yoda Fantasma (Meu 1º Funko) <br>
+        <img src="assets/imagens/Votação_funko/Yoda_fantasma.jpg" height="250px">
+        <input type="checkbox" id="ipt_yoda" value="3">
+    </div>
+<br>
+    <div> Eddie Ciborgue (Meu 100º Funko) <br>
+        <img src="assets/imagens/Votação_funko/eddy.jpg" height="250px">
+        <input type="checkbox" id="ipt_eddie" value="4">
+    </div>
+<br>
+    <div> Motoqueiro Fantasma Cósmico (Meu herói favorito)<br>
+        <img src="assets/imagens/Votação_funko/Motoqueiro.jpg" height="250px">
+        <input type="checkbox" id="ipt_motoqueiro" value="5">
+    </div>
+<br>
+    <button onclick="voto()">VOTAR</button>
+</div>
 </body>
 </html>

@@ -29,6 +29,7 @@ body{
 
 .header .navegacao a {
     text-decoration: underline;
+    color:  black;
 }
 
 .container{
@@ -41,66 +42,4 @@ body{
     height: 450px;
     background-image: url(../../assets/imagens/Inicio/fundo_index.jpg);
     opacity: 0.7;
-}
-.info .texto{
-    color: white;
-}
-
-a{
-text-decoration: none;
-color: black;
-}
-
-.banner {
-    background-color:gray;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    height: 200px;
-}
-.banner:hover{
-    transition: all;
-}
-
-.banner .skylanders{
-    background-image: url(../../assets/imagens/Inicio/skylander_icon.png);
-    width: 210px;
-    height: 200px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.banner .pokemon{
-    background-image: url(../../assets/imagens/Inicio/pokemon_icone.jpg);
-    width: 210px;
-    height: 200px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.banner .hqs{
-    background-image: url(../../assets/imagens/Inicio/hq_icone.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 210px;
-    height: 200px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.banner .funko{
-    background-image: url(../../assets/imagens/Inicio/funko_icone.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 210px;
-    height: 200px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.banner  .artigo{
-    font-size: small;
-    display: flex;
-    justify-content: space-between;
 }

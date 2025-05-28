@@ -37,3 +37,28 @@ body{
     margin: auto;
     display: flex;
 }
+
+.info{
+    height: 450px;
+    background-image: url(../../assets/imagens/Votação_funko/funko_fusion.jpg);
+    opacity: 0.7;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo{
+    font-size:larger ;
+    display: flex;
+    justify-content: center;
+}
+
+.artigo{
+    color: black;
+    margin: 20px;
+}
+
+.votacao {
+    margin: 20px;
+}

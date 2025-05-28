@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*{
+    font-family: "Audiowide",Arial, Helvetica, sans-serif;;
+}
+
+body{
+    background-color: rgb(114, 111, 111);
+    margin: 0;
+}
+
+.header{
+    background-color: rgb(31, 5, 75);
+}
+.header .container{
+    justify-content:space-between;
+}
+.header .container .titulo{
+    font-size: xx-large;
+}
+
+.header .navegacao{
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+ list-style: none;
+}
+
+.header .navegacao a {
+    text-decoration: underline;
+    color: black;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.info{
+    height: 450px;
+    background-image: url(../../assets/imagens/Inicio/artigo_fundo.jpg);
+    opacity: 0.7;
+}
+
+a{
+text-decoration: none;
+color: black;
+}
+
+.titulo{
+    font-size:larger ;
+    display: flex;
+    justify-content: center;
+}
+
+.banner {
+    background-color:gray;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    height: 200px;
+    margin: 20px;
+}
+
+.banner .skylanders{
+    background-image: url(../../assets/imagens/Inicio/skylander_icon.png);
+    width: 210px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.banner .pokemon{
+    background-image: url(../../assets/imagens/Inicio/pokemon_icone.jpg);
+    width: 210px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.banner .hqs{
+    background-image: url(../../assets/imagens/Inicio/hq_icone.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 210px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.banner .funko{
+    background-image: url(../../assets/imagens/Inicio/funko_icone.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 210px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.banner  .artigo{
+    font-size: small;
+    display: flex;
+    justify-content: space-between;
+}
