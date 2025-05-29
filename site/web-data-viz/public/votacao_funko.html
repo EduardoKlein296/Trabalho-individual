@@ -38,36 +38,88 @@
 <div class="votacao">
     <div> Batman que Ri (Vilão da primeira saga da minha coleção de hqs)<br>
         <img src="assets/imagens/Votação_funko/batman_que_ri.jpg" height="250px">
-        <input type="checkbox" id="ipt_batman" value="1">
+       <div>
+        Batman que Ri é uma versão do Dark Multiverse do Batman, que enloqueceu após matar o Coringa. Aparecendo na primeira vez
+        durante a saga Metal, e sendo o vilão principal de sua continuação, a saga Death Metal.</div>
     </div>
 <br>
     <div> Mimikyu (Meu pokemon favorito)<br>
         <img src="assets/imagens/Votação_funko/mymikyu.jpg" height="250px">
-        <input type="checkbox" id="ipt_mimikyu" value="2">
+        <div>Mimikyu é um pokemon do tipo Fantasma e Fada, possuindo uma forma verdadeira desconhecida ele se disfarça
+            de Pikachu para conseguir se aproximar de outros pokemons e pessoas, sendo assim classificado como Pokemon disfarce.
+        </div>
     </div>
 <br>
     <div> Yoda Fantasma (Meu 1º Funko) <br>
         <img src="assets/imagens/Votação_funko/Yoda_fantasma.jpg" height="250px">
-        <input type="checkbox" id="ipt_yoda" value="3">
+        <div>
+            O fantasma do lendário mestre Jedi Yoda, que surge como um Fantasma da Força ao lado de Anakym e Obi-Wan
+            no final do filme Star Wars: O Retorndo do Jedi. Curiosidade: essse funko brilha no escuro .
+        </div>
     </div>
 <br>
     <div> Eddie Ciborgue (Meu 100º Funko) <br>
         <img src="assets/imagens/Votação_funko/eddy.jpg" height="250px">
-        <input type="checkbox" id="ipt_eddie" value="4">
+        <div>
+            Eddie é o mascote da banda de Heavy Metal Iron Maiden, estapando todos os albuns da banda. Com o Eddie Ciborgue
+            estapando o album Somewhere In Time de 1986, com este Funko sendo da linha feita em homenagem a turnê FuturePast
+            junto com outros 3 Funkos.
+        </div>
     </div>
 <br>
     <div> Motoqueiro Fantasma Cósmico (Meu herói favorito)<br>
         <img src="assets/imagens/Votação_funko/Motoqueiro.jpg" height="250px">
-        <input type="checkbox" id="ipt_motoqueiro" value="5">
+        <div>
+            O Motoqueiro Fantasma Cósmico é um Frank Castle, conhecido como o Justiceiro, de um futuro alternativo no qual Thanos
+            venceu e eliminou toda a vida da terra. Após morrer ele acabou indo para o inferno e fazendo um pacto com o Mephisto,
+            o principal capeta da Marvel, assim voltando a vida como um espiríto da vingança, o Motoqueiro Fantasma, determinado em se vingar de quem o matou, Thanos.
+            Como não havia mais vida na Terra ele acabou vagando por centenas de anos sozinho, assim eloquecendo. Um dia Galactus,
+            ferido de um batalha contra o titã louco, apareceu na Terra para devora-la, como o Frank era o único que restava na Terra,
+            eles conversaram, assim ele se tornou um arauto do Galactus e partiu em busca do Thanos junto de seu mestre e virando
+            o Motoqueiro Fantasma Cósmico. Quando eles se enfrentam o Galactus acaba sendo morto pelo titã, mas acaba transformando
+            o motoqueiro em seu braço direito, após isso um Surfista Prateado portando o Mjonir de Thor e o mata. Jungando que ele
+            foi morto injustamente pelo martelo de seu filgo, Odin decide acolher sua alma em Valhalla, o que não da certo pois ele
+            arruma encrenca com outros habitantes de lá, assim Odin decide trazer ele devolta para a vida dando a chance dele escolher
+            em qual ponto da linha do tempo ele o deixaria. Frank sem pensar duas vezes decide ir para a época em que o Thanos era um bebê
+            para mata-lo. Ao chegar lá e ultilizar o olhar da penitência, que o permite ver os pecados das pessoas, ele vê que o bebê
+            ainda não cometeu nenhumm erro, assim decidindo o criar.
+        </div>
     </div>
 <br>
+    <select name="voto" id="slc_voto">
+        <option value="0">Selecione o Funko Pop</option>
+        <option value="1">Batman que Ri</option>
+        <option value="2">Mimikyu</option>
+        <option value="3">Yoda Fantasma</option>
+        <option value="4">Eddie Ciborgue</option>
+        <option value="5">Motoqueiro Fantasma Cósmico</option>
+    </select>
+    <br>
     <button onclick="votacao()">VOTAR</button>
+    <div id="resposta"></div>
 </div>
 </body>
 </html>
 
 <script>
     function votacao(){
-        
+        var voto = slc_voto.value
+        if(voto=="0"){
+            resposta.innerHTML = `Selecione um Funko Pop`
+            return
+        }
+
+       fetch("/usuarios/votacao",{
+            method: "POST",
+            headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        votoServer: voto
+      }),
+        })
+        resposta.innerHTML=`Voto contabilizado. <a href="dashboard/dashboard.html">Veja o resultado</a>`
     }
 </script>
