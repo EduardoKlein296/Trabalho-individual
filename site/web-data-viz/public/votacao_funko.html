@@ -97,6 +97,7 @@
     <br>
     <button onclick="votacao()">VOTAR</button>
     <div id="resposta"></div>
+    
 </div>
 </body>
 </html>
@@ -104,6 +105,8 @@
 <script>
     function votacao(){
         var voto = slc_voto.value
+        var id = sessionStorage.ID_USUARIO
+        console.log(id)
         if(voto=="0"){
             resposta.innerHTML = `Selecione um Funko Pop`
             return
@@ -117,7 +120,8 @@
       body: JSON.stringify({
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
-        votoServer: voto
+        votoServer: voto,
+        idUser: id
       }),
         })
         resposta.innerHTML=`Voto contabilizado. <a href="dashboard/dashboard.html">Veja o resultado</a>`
