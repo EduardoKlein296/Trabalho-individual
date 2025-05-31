@@ -27,8 +27,8 @@ constraint foreign key (fkArtigo) references artigo(idArtigo)
 );
 
 create table votação(
-voto char(1),
 fkUsuario Int,
+voto char(1),
 constraint foreign key (fkUsuario) references usuario(id)
 );
 
