@@ -27,7 +27,6 @@ constraint foreign key (fkArtigo) references artigo(idArtigo)
 );
 
 create table votação(
-id INT auto_increment primary key,
 voto char(1),
 fkUsuario Int,
 constraint foreign key (fkUsuario) references usuario(id)
@@ -42,5 +41,7 @@ values ('Skylander'),
 select * from artigo;
 
 select * from usuario;
+
+select * from votação;
 
 -- drop database coleção;

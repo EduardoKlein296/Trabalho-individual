@@ -87,7 +87,7 @@ function votacao(req, res) {
     // Faça as validações dos valores
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.votacao(voto, id)
+        usuarioModel.votacao(id, voto)
             .then(
                 function (resultado) {
                     res.json(resultado);
