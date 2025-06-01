@@ -11,6 +11,7 @@ body{
 
 .header{
     background-color: rgb(31, 5, 75);
+    color: gray;
 }
 .header .container{
     justify-content:space-between;
@@ -29,7 +30,7 @@ body{
 
 .header .navegacao a {
     text-decoration: underline;
-    color: black;
+    color: gray;
 }
 
 .container{
