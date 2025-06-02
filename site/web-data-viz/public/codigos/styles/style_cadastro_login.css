@@ -200,3 +200,15 @@ input {
   height: 50px;
   width: 50px;
 }
+
+.fundo{
+    background-color: black;
+    color: gray;
+    height: 150px;
+    display: flex;
+}
+
+.fundo .container{
+  justify-content: center;
+  text-align: center;
+}

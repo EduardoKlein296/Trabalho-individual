@@ -63,3 +63,15 @@ body{
 .votacao {
     margin: 20px;
 }
+
+.fundo{
+    background-color: black;
+    color: gray;
+    height: 150px;
+    display: flex;
+}
+
+.fundo .container{
+  justify-content: center;
+  text-align: center;
+}

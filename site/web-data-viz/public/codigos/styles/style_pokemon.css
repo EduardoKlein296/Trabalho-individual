@@ -63,3 +63,15 @@ body{
     justify-content: space-between;
     align-items:center;
 }
+
+.fundo{
+    background-color: black;
+    color: gray;
+    height: 150px;
+    display: flex;
+}
+
+.fundo .container{
+  justify-content: center;
+  text-align: center;
+}

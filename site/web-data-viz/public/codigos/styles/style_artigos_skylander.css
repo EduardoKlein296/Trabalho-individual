@@ -77,3 +77,15 @@ body{
 .artigo .gameplay_exemplo video{
     margin:20px
 }
+
+.fundo{
+    background-color: black;
+    color: gray;
+    height: 150px;
+    display: flex;
+}
+
+.fundo .container{
+  justify-content: center;
+  text-align: center;
+}

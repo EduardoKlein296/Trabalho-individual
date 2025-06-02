@@ -44,3 +44,15 @@ body{
     background-image: url(../../assets/imagens/Inicio/fundo_index.jpg);
     opacity: 0.7;
 }
+
+.fundo{
+    background-color: black;
+    color: gray;
+    height: 150px;
+    display: flex;
+}
+
+.fundo .container{
+  justify-content: center;
+  text-align: center;
+}
