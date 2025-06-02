@@ -46,3 +46,20 @@ body{
     background-size: cover;
     background-position: center;
 }
+
+.titulo{
+    font-size:x-large ;
+    display: flex;
+    justify-content: center;
+}
+
+.artigo{
+    color: black;
+    margin: 20px;
+}
+
+.artigo .exemplo img{
+    height: 250px;
+    justify-content: space-between;
+    align-items:center;
+}
