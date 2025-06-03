@@ -15,16 +15,6 @@ idArtigo INT auto_increment primary key,
 nome varchar(45)
 );
 
-create table comentario(
-idComentario INT auto_increment primary key,
-texto varchar(500),
-fkUsuario Int,
-constraint foreign key (fkUsuario) references usuario(id),
-resposta int,
-constraint foreign key (resposta) references comentario(idComentario),
-fkArtigo INT,
-constraint foreign key (fkArtigo) references artigo(idArtigo)
-);
 
 create table votação(
 fkUsuario Int,
@@ -32,15 +22,27 @@ voto char(1),
 constraint foreign key (fkUsuario) references usuario(id)
 );
 
-insert into artigo(nome)
-values ('Skylander'),
-('PokemonTCG'),
-('Hq'),
-('Funko Pop');
+create table funko(
+id INT primary key auto_increment,
+nome varchar(45)
+);
 
-select * from artigo;
+insert into funko (nome)
+values ("Batman que ri"),
+("Mimikyu"),
+("Yoda Fantasma"),
+("Eddie Ciborgue"),
+("Motoqueiro Fantasma Cósmico"); 
+
+alter table votação
+modify column voto INT;
+
+alter table votação
+add constraint foreign key (voto) references funko (id);
 
 select * from usuario;
+
+select * from funko;
 
 select * 
 from votação;

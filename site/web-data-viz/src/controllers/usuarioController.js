@@ -105,6 +105,7 @@ function votacao(req, res) {
     
 }
 
+
 module.exports = {
     autenticar,
     cadastrar,

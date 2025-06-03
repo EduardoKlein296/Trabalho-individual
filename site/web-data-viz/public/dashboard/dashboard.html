@@ -25,7 +25,7 @@
 </head>
 
 
-<body>
+<body onload= obterDados()>
 
       <div class="header">
         <div class="container">
@@ -61,30 +61,95 @@
 </html>
 
 <script>
-  const ctx = document.getElementById('grafico');
 
-  var batman =null
-  var mimikyu =null
-  var yoda= null
+  /*var batman = null
+  var mimikyu = null
+  var yoda = null
   var eddie = null
-  var motoqueiro =null
-  Chart.defaults.color = '#000';
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Batman que Ri', 'Mimikyu', 'Yoda Fantasma', 'Eddie Ciborgue', 'Motoqueiro Fantasma Cósmico'],
-      datasets: [{
-        label: 'Quantidade de votos',
-        data: [batman, mimikyu, yoda, eddie, motoqueiro],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
+  var motoqueiro = null  */
+
+  
+
+  function obterDados(){
+  fetch('/ultimos/votos')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                plotarGrafico(data); // Passando os dados corretamente para a função plotarGrafico
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+
+  }
+  
+   function plotarGrafico() {
+
+      console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para o gráfico de barras
+        let labels = [];
+        let dadosGrafico = [];
+
+        // Inserindo valores recebidos em estrutura para o gráfico
+        for (let i = 0; i < dados.length; i++) {
+            let registro = dados[i];
+            labels.push(registro.XXXXX);  // Passe aqui a label do que você está tentando buscar no select do bd (XXXXX)
+            dadosGrafico.push(registro.YYYYY);  // Passe aqui os dados que você está tentando buscar no select bd (YYYYY)
         }
-      }
+
+        console.log('O gráfico será plotado com os seguintes valores:');
+        console.log('Labels:', labels);
+        console.log('Dados:', dadosGrafico);
+
+        // Configurando o gráfico de barras
+         const ctx = document.getElementById('grafico'); 
+
+ 
+
+  Chart.defaults.color = '#000'; 
+
+  new Chart(ctx, { 
+
+    type: 'bar', 
+
+    data: { 
+
+      labels: ['Batman que Ri', 'Mimikyu', 'Yoda Fantasma', 'Eddie Ciborgue', 'Motoqueiro Fantasma Cósmico'], 
+
+      datasets: [{ 
+
+        label: 'Quantidade de votos', 
+
+        data: [batman, mimikyu, yoda, eddie, motoqueiro], 
+
+        borderWidth: 1 
+
+      }] 
+
+    }, 
+
+    options: { 
+
+      scales: { 
+
+        y: { 
+
+          beginAtZero: true 
+
+        } 
+
+      } 
+
+    } 
+
+  }); 
+
+        // Plotando o gráfico de barras no canvas
+        let myChart = new Chart(
+            document.getElementById('graficoBarras'),  // Chamando o gráfico pelo ID do canvas
+            config
+        );
     }
-  });
 </script>

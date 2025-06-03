@@ -32,8 +32,13 @@ function votacao(id, voto) {
     return database.executar(instrucaoSql);
 }
 
+function cout_batman (){
+    var count_batman =`select count(voto) from votação where voto = 1;`
+}
+
 module.exports = {
     autenticar,
     cadastrar,
-    votacao
+    votacao,
+    cout_batman
 };
