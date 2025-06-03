@@ -118,6 +118,11 @@
             return
         }
 
+        if(id==null){
+            alert("Faça login para conseguir votar")
+            return
+        }
+        
        fetch("/usuarios/votacao",{
             method: "POST",
             headers: {

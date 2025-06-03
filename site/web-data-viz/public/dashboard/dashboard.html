@@ -50,7 +50,12 @@
     <div class="js">
         <canvas id="grafico"></canvas>
     </div>
-
+    <br>
+    <div class="fundo">
+        <div class="container">
+            Esse site foi realizado pelo aluno Eduardo Klein de Figueiredo
+        </div>
+    </div>
 </body>
 
 </html>
@@ -58,13 +63,19 @@
 <script>
   const ctx = document.getElementById('grafico');
 
+  var batman =null
+  var mimikyu =null
+  var yoda= null
+  var eddie = null
+  var motoqueiro =null
+  Chart.defaults.color = '#000';
   new Chart(ctx, {
     type: 'bar',
     data: {
       labels: ['Batman que Ri', 'Mimikyu', 'Yoda Fantasma', 'Eddie Ciborgue', 'Motoqueiro Fantasma Cósmico'],
       datasets: [{
         label: 'Quantidade de votos',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [batman, mimikyu, yoda, eddie, motoqueiro],
         borderWidth: 1
       }]
     },

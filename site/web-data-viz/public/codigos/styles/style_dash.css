@@ -40,8 +40,22 @@ body{
 }
 
 .js{
+    margin-left: 100px;
+    margin-top: 20px;
     display: flex;
-    height: 1000px;
+    height: 500px;
     width: 1000px;
     justify-content: center;
+}
+
+.fundo{
+    background-color: black;
+    color: gray;
+    height: 150px;
+    display: flex;
+}
+
+.fundo .container{
+  justify-content: center;
+  text-align: center;
 }

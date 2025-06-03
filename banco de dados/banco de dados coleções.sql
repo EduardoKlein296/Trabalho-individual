@@ -42,6 +42,8 @@ select * from artigo;
 
 select * from usuario;
 
-select * from votação;
+select * 
+from votação;
 
+select count(voto) from votação where voto = 1;
 -- drop database coleção;
