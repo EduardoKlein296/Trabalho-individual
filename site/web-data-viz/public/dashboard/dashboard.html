@@ -2,154 +2,141 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coleções do Edu | Resultado Votação</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coleções do Edu | Resultado Votação</title>
 
-    
-    <link rel="stylesheet" href="./../css/dashboards.css">
-    <link rel="stylesheet" href="../codigos/styles/style_dash.css" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+  <link rel="stylesheet" href="./../css/dashboards.css">
+  <link rel="stylesheet" href="../codigos/styles/style_dash.css" />
 
-    <!-- scripts do Chart.js - 2022-1 -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
-    <!--FONT AWESOME-->
-    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+  <!-- scripts do Chart.js - 2022-1 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!--FONT AWESOME-->
+  <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
 
-<body onload= obterDados()>
+<body>
 
-      <div class="header">
-        <div class="container">
-            <h1 class="titulo">Coleções do Edu</h1>
-            <ul class="navegacao">
-                <li class="agora">
-                    <a href="../index.html">Inicio</a>
-                </li>
-                <li>
-                    <a href="../artigos.html">Artigos</a>
-                </li>
-                <li>
-                    <a href="../login.html">Login</a>
-                </li>
-                <li>
-                    <a href="../cadastro.html">Cadastrar</a>
-                </li>
-            </ul>
-        </div>
+  <div class="header">
+    <div class="container">
+      <h1 class="titulo">Coleções do Edu</h1>
+      <ul class="navegacao">
+        <li class="agora">
+          <a href="../index.html">Inicio</a>
+        </li>
+        <li>
+          <a href="../artigos.html">Artigos</a>
+        </li>
+        <li>
+          <a href="../login.html">Login</a>
+        </li>
+        <li>
+          <a href="../cadastro.html">Cadastrar</a>
+        </li>
+      </ul>
     </div>
-    
-    <div class="js">
-        <canvas id="grafico"></canvas>
+  </div>
+
+  <div class="js">
+    <canvas id="grafico"></canvas>
+  </div>
+  <br>
+  <div class="fundo">
+    <div class="container">
+      Esse site foi realizado pelo aluno Eduardo Klein de Figueiredo
     </div>
-    <br>
-    <div class="fundo">
-        <div class="container">
-            Esse site foi realizado pelo aluno Eduardo Klein de Figueiredo
-        </div>
-    </div>
+  </div>
 </body>
 
 </html>
 
 <script>
 
-  /*var batman = null
-  var mimikyu = null
-  var yoda = null
-  var eddie = null
-  var motoqueiro = null  */
 
-  
 
-  function obterDados(){
-  fetch('/ultimos/votos')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                plotarGrafico(data); // Passando os dados corretamente para a função plotarGrafico
-            })
-            .catch(function (err) {
-                console.log(err);
+  window.onload = obterDados()
+
+  function obterDados() {
+    fetch(`/votos/ultimos`)
+
+      .then(function (response) {
+        if (response.ok) {
+          response.json()
+            .then(function (resposta) {
+              console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+              resposta.reverse();
+              console.log("--> " + JSON.stringify(resposta))
+              plotarGrafico(resposta);
+
             });
+        } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
 
   }
-  
-   function plotarGrafico() {
 
-      console.log('iniciando plotagem do gráfico...');
+  // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+  // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+  // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+  function plotarGrafico(resposta) {
+    console.log("2 --> " + JSON.stringify(resposta))
+    console.log('iniciando plotagem do gráfico...');
 
-        // Criando estrutura para o gráfico de barras
-        let labels = [];
-        let dadosGrafico = [];
+    // Criando estrutura para plotar gráfico - labels
+    let labels = [];
 
-        // Inserindo valores recebidos em estrutura para o gráfico
-        for (let i = 0; i < dados.length; i++) {
-            let registro = dados[i];
-            labels.push(registro.XXXXX);  // Passe aqui a label do que você está tentando buscar no select do bd (XXXXX)
-            dadosGrafico.push(registro.YYYYY);  // Passe aqui os dados que você está tentando buscar no select bd (YYYYY)
-        }
-
-        console.log('O gráfico será plotado com os seguintes valores:');
-        console.log('Labels:', labels);
-        console.log('Dados:', dadosGrafico);
-
-        // Configurando o gráfico de barras
-         const ctx = document.getElementById('grafico'); 
-
- 
-
-  Chart.defaults.color = '#000'; 
-
-  new Chart(ctx, { 
-
-    type: 'bar', 
-
-    data: { 
-
-      labels: ['Batman que Ri', 'Mimikyu', 'Yoda Fantasma', 'Eddie Ciborgue', 'Motoqueiro Fantasma Cósmico'], 
-
-      datasets: [{ 
-
-        label: 'Quantidade de votos', 
-
-        data: [batman, mimikyu, yoda, eddie, motoqueiro], 
-
-        borderWidth: 1 
-
-      }] 
-
-    }, 
-
-    options: { 
-
-      scales: { 
-
-        y: { 
-
-          beginAtZero: true 
-
-        } 
-
-      } 
-
-    } 
-
-  }); 
-
-        // Plotando o gráfico de barras no canvas
-        let myChart = new Chart(
-            document.getElementById('graficoBarras'),  // Chamando o gráfico pelo ID do canvas
-            config
-        );
+    // Criando estrutura para plotar gráfico - dados
+    Chart.defaults.color = '#000';
+    let dados = {
+      labels: labels,
+      datasets: [{
+        label: 'Quantia de votos',
+        data: [],
+        borderWidth: 1
+      }]
     }
+
+    console.log('----------------------------------------------')
+    console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+    console.log(resposta)
+
+    // Inserindo valores recebidos em estrutura para plotar o gráfico
+    for (i = 0; i < resposta.length; i++) {
+      var registro = resposta[i];
+      labels.push(registro.nome);
+      dados.datasets[0].data.push(registro.votos);
+    }
+
+    console.log('----------------------------------------------')
+    console.log('O gráfico será plotado com os respectivos valores:')
+    console.log('Labels:')
+    console.log(labels)
+    console.log('Dados:')
+    console.log(dados.datasets)
+    console.log('----------------------------------------------')
+
+    
+        const config = {
+            type: 'bar',
+            data: dados,
+        };  
+
+  // Adicionando gráfico criado em div na tela
+         new Chart(
+             document.getElementById(`grafico`),
+             config
+         );
+  }
+
+
 </script>

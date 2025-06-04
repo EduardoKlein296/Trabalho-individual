@@ -79,7 +79,7 @@ function cadastrar(req, res) {
     }
 }
 
-function votacao(req, res) {
+function votar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var voto = req.body.votoServer;
     var id = req.body.idUser;
@@ -87,7 +87,7 @@ function votacao(req, res) {
     // Faça as validações dos valores
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.votacao(id, voto)
+        usuarioModel.votar(id, voto)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -109,5 +109,5 @@ function votacao(req, res) {
 module.exports = {
     autenticar,
     cadastrar,
-    votacao
+    votar
 }

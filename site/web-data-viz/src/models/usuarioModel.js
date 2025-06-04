@@ -22,7 +22,7 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucaoSql);
 }
 
-function votacao(id, voto) {
+function votar(id, voto) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucaoSql = `
@@ -32,13 +32,9 @@ function votacao(id, voto) {
     return database.executar(instrucaoSql);
 }
 
-function cout_batman (){
-    var count_batman =`select count(voto) from votação where voto = 1;`
-}
 
 module.exports = {
     autenticar,
     cadastrar,
-    votacao,
-    cout_batman
+    votar
 };
