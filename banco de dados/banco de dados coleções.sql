@@ -47,5 +47,6 @@ select * from funko;
 select * 
 from votação;
 
-select count(voto) from votação where voto = 1;
+select f.nome, count(v.voto) as votos from votação v inner join
+funko f on v.voto = f.id group by f.nome;
 -- drop database coleção;
